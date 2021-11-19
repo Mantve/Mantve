@@ -9,22 +9,54 @@
 
         body {
             font-family: 'Noto Sans', sans-serif;
+            background-color: darkslateblue;
         }
 
-        @keyframes rotate-this-s{
-        50%    { transform: rotate(180deg); }
-        100%  { transform: rotate(180deg); }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
-        .ali-g {
-        animation: nrotate-this-s 3s infinite;
+        @keyframes rainbow_animation {
+
+            0%,
+            100% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 100% 0;
+            }
+        }
+
+        .spinner {
+            animation: rotate 3s linear infinite;
+        }
+
+        .rainbow {
+
+            background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: rainbow_animation 6s linear infinite;
+            background-size: 400% 100%;
+            color: transparent;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
     <h1> Test test </h1>
-    <p class="ali-g">😳😳</p>
+    <p class="spinner">😳😳</p>
+    <a class="rainbow">WHEEEEEEEEEEEEEEEEEE</a>
 </body>
 
 </html>
