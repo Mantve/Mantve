@@ -10,12 +10,21 @@
         body {
             font-family: 'Noto Sans', sans-serif;
         }
+
+        @keyframes rotate-this-s{
+        50%    { transform: rotate(180deg); }
+        100%  { transform: rotate(180deg); }
+        }
+
+        .ali-g {
+        animation: nrotate-this-s 3s infinite;
+        }
     </style>
 </head>
 
 <body>
     <h1> Test test </h1>
-    <p>😳😳</p>
+    <p> class="ali-g">😳😳</p>
 </body>
 
 </html>
