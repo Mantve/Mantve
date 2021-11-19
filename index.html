@@ -34,29 +34,76 @@
             }
         }
 
+        @keyframes epic-skew {
+            0%,100%{
+                transform: skew(50deg, -30deg) scale(1, 1);
+            }
+            50%{
+                transform: skew(10deg, -30deg) scale(0.75, 1.5);
+            }
+        }
         .spinner {
-            animation: rotate 3s linear infinite;
+            animation: rotate 10s linear infinite;
+            font-size: 10rem;
+            text-align: center;
         }
 
-        .rainbow {
+        .spinner:hover:after {
+            content: '😊';
+        }
 
-            background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: rainbow_animation 6s linear infinite;
-            background-size: 400% 100%;
-            color: transparent;
-            text-align: center;
-            font-size: 30px;
+        .spinner:after {
+            content: '😳';
+        }
+
+        .wheee {
+            color: white;
+            font-style: italic;
+            font-size: 3rem;
+        }
+
+        .epic {
+            font-size: 5rem;
             font-weight: bold;
+            font-style: italic;
+            font-family: cursive;
+            margin-top: 5rem;
+            overflow: hidden;
+            background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-size: 1000% 100%;
+            animation: epic-skew 2s ease-in-out infinite, rainbow_animation 6s linear infinite;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            height: 50px;
+            text-align: right;
+            margin-left: -25px;
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
     <h1> Test test </h1>
-    <p class="spinner">😳😳</p>
-    <a class="rainbow">WHEEEEEEEEEEEEEEEEEE</a>
+    <div style="text-align: center;">
+        <marquee direction="right" scrollamount="50" class="wheee">WHEEEEEEEEEEEEEEEEEE</marquee>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <span class="spinner"></span>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <span class="epic"> WEB DESIGN IS MY PASSION</span>
+    </div>
+
 </body>
+
+<footer>
+    <p>Mantve#5126</p>
+</footer>
 
 </html>
